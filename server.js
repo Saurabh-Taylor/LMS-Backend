@@ -14,6 +14,6 @@ cloudinary.v2.config({
 
 app.listen(PORT,async()=>{
     await connectToDB()
-    console.log(process.env.CLOUDINARY_CLOUD_NAME,process.env.CLOUDINARY_API_KEY,process.env.CLOUDINARY_API_SECRET);
+    // console.log(process.env.CLOUDINARY_CLOUD_NAME,process.env.CLOUDINARY_API_KEY,process.env.CLOUDINARY_API_SECRET);
     console.log(`Server is running on ${PORT}`);
 })
