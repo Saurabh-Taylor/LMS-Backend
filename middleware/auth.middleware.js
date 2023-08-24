@@ -21,3 +21,11 @@ export const authorizedRoles = (...roles) => async (req, res, next) => {
     }
     next();
 }
+
+export const authrorizeSubscriber = async(req,res,next)=>{
+    const subscription = req.user.subscription
+    const currentUserRole = req.user.role;
+    if(currentUserRole !=='ADMIN' && subscription.status !=='active'){
+        return next(new AppError("please subscribe to access this route!"),403)
+    }
+}
